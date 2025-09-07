@@ -183,7 +183,7 @@ if os.path.exists(filename):
         df_new,
         on=["_key", "단과대명", "학과명", "모집인원"],
         suffixes=("_old", "_new"),
-        how="inner"   # (수정?)
+        how="outer"   # (수정?)
     )
 
     # 공통 컬럼 처리 (여기부터 이해 못 함)
