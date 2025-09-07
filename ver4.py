@@ -10,6 +10,8 @@ from openpyxl.utils import get_column_letter
 import datetime
 import os
 
+import tempfile
+
 options = Options()
 #크롬 드라이버 실행
 options.add_argument("--headless")
@@ -17,7 +19,7 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")  # 샌드박스 끄기 (EC2에서 필수)
 options.add_argument("--disable-dev-shm-usage")  # 메모리 문제 해결
 options.add_argument("--disable-gpu")  # GPU 비활성화
-options.add_argument("--remote-debugging-port=9222")  # 디버깅 포트 열기
+options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
 driver = webdriver.Chrome(
     service=Service(ChromeDriverManager().install()),
