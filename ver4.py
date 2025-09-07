@@ -96,7 +96,6 @@ df_new["_key"] = df_new["단과대명"].astype(str).str.strip() + "_" + \
 # df_new["_key"] = df_new["단과대명"].astype(str).str.strip() + " " + df_new["학과명"].astype(str).str.strip() + " " + df_new["모집인원"].astype(str).str.strip()
 df_new["_row_order"] = range(len(df_new)) # 얘는 뭔 순서 유지용이라는데 ㅁㄹ
 
-'''filename = r"C:\파이썬 아이들\scr_prc\이화여자대학교_2025_수시_경쟁률_추이.xlsx"'''
 filename = "/home/ubuntu/scr_prc/이화여자대학교_2025_수시_경쟁률_추이.xlsx"
 
 '''if os.path.exists(filename):
