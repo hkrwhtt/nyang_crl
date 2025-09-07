@@ -13,7 +13,16 @@ import os
 options = Options()
 #크롬 드라이버 실행
 options.add_argument("--headless")
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+options.add_argument("--no-sandbox")  # 샌드박스 끄기 (EC2에서 필수)
+options.add_argument("--disable-dev-shm-usage")  # 메모리 문제 해결
+options.add_argument("--disable-gpu")  # GPU 비활성화
+options.add_argument("--remote-debugging-port=9222")  # 디버깅 포트 열기
+
+driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=options
+)
 
 #데이터 리스트 만들기
 data = []
