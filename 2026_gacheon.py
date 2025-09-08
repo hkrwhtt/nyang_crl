@@ -111,7 +111,7 @@ if os.path.exists(filename):
         df_new,
         on=["_key", "단과대명", "학과명", "모집인원"],
         suffixes=("_old", "_new"),
-        how="inner"   # (수정?)
+        how="outer"   # (수정?)
     )
 
     # 공통 컬럼 처리 (여기부터 이해 못 함)
@@ -151,4 +151,5 @@ df_final = df_final[final_cols]
 
 # 저장
 df_final.to_excel(filename, index=False, engine="openpyxl")
+
 print(f"{now} 시각의 데이터가 추가되었습니다.")
