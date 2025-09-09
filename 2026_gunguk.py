@@ -105,8 +105,7 @@ df_new["_key"] = df_new["전형명"].astype(str).str.strip() + "_" + \
 # df_new["_key"] = df_new["단과대명"].astype(str).str.strip() + " " + df_new["학과명"].astype(str).str.strip() + " " + df_new["모집인원"].astype(str).str.strip()
 df_new["_row_order"] = range(len(df_new)) # 얘는 뭔 순서 유지용이라는데 ㅁㄹ
 
-# filename = "/home/ubuntu/scr_prc/건국대학교_2026_수시_경쟁률_추이.xlsx" # 수정
-filename = r"C:\파이썬 아이들\scr_prc\건국대학교_2025_수시_경쟁률_추이.xlsx"
+filename = "/home/ubuntu/scr_prc/건국대학교_2026_수시_경쟁률_추이.xlsx" # 수정
 
 
 if os.path.exists(filename):
@@ -170,4 +169,5 @@ df_final = df_final[final_cols]
 
 # 저장
 df_final.to_excel(filename, index=False, engine="openpyxl")
+
 print(f"{now} 시각의 데이터가 추가되었습니다.")
